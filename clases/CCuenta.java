@@ -158,17 +158,17 @@ public class CCuenta {
      * @see ingresar
      * @see retirar
      */
-    public static void operativa_cuenta(CCuenta cuenta1, double cantidad) {
+    public static void operativa_cuenta(CCuenta cuenta1, float cantidad) {
         double saldoActual = cuenta1.estado();
         System.out.println("El saldo actual es" + saldoActual);
         try {
-            cuenta1.retirar(cantidad);
+            cuenta1.retirar((double) cantidad);
         } catch (Exception e) {
             System.out.print("Fallo al retirar");
         }
         try {
             System.out.println("Ingreso en cuenta");
-            cuenta1.ingresar(cantidad);
+            cuenta1.ingresar((double) cantidad);
         } catch (Exception e) {
             System.out.print("Fallo al ingresar");
         }
